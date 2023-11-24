@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.key{border:2px solid white;font-size:90%}.key:before{content:" "}.key:after{content:" "}
+span[data-keynum]{-moz-user-select:none;-o-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}
+</style>
+</head>
+<script>
+var textall=[
+	["昔闻洞庭水，今上岳阳楼。吴楚东南坼，乾坤日夜浮。亲朋无一字，老病有孤舟。戎马关山北，凭轩涕泗流。","登岳阳楼","唐·杜甫"],
+	["登临送目。正故国晚秋，天气初肃。千里澄江似练，翠峰如簇。归帆去棹残阳里，背西风、酒旗斜矗。彩舟云淡，星河鹭起，画图难足。念往昔、繁华竞逐。叹门外楼头，悲恨相续。千古凭高，对此谩嗟荣辱。六朝旧事随流水，但寒烟、芳草凝绿。至今商女，时时犹唱后庭遗曲。","桂枝香·金陵怀古","宋·王安石"],
+	["洞庭青草，近中秋、更无一点风色。玉界琼田三万顷，着我扁舟一叶。素月分辉，明河共影，表里俱澄澈。悠然心会，妙处难与君说。应念岭海经年，孤光自照，肝肺皆冰雪。短发萧骚襟袖冷，稳泛沧浪空阔。尽挹西江，细斟北斗，万象为宾客。扣舷独啸，不知今夕何夕！","念奴娇·过洞庭","宋·张孝祥"],
+	["原来姹紫嫣红开遍，似这般都付与断井颓垣。良辰美景奈何天，赏心乐事谁家院！朝飞暮卷，云霞翠轩；雨丝风片，烟波画船——锦屏人忒看的这韶光贱！","游园","明·汤显祖"],
+];
+</script>
+<body style="background-color:black;color:white;font-weight:bold;font-size:20px">
+<div><div style="border:2px solid red;width:25%;position:fixed;right:0%;background-color:rgba(255,255,255,0.3);overflow:auto;max-height:100%" onclick="newopenf(this)" id="cyid_rightshow">
+<div onclick="if(rs){rs.innerHTML=&quot;&quot;}else if(window.opener){window.opener.rs.innerHTML=&quot;&quot;}" data-changecolor data-lightcolor=yellow data-darkcolor=#BB0><u>点击此处隐藏下方内容</u></div><div id="rs"></div>
+</div></div>
+<div style="font-size:150%">语文诗词背诵</div><small>提示：<span style="display:inline-block;width:400px"><span class=key data-keynum=67>C</span>&nbsp;键+鼠标单击&nbsp;可在新窗口显示鼠标点击部分内容<br><span class=key data-keynum=76>L</span>&nbsp;键&nbsp;可控制页面风格色为亮或暗<br><span class=key data-keynum=83>S</span>&nbsp;键&nbsp;可暂时显示全部答案</span></small><div><table id="ot" style="float:left" onclick="newopenf(this)"></table></div>
+<script>
+var weigh=new Array();//权
+var weighsum=new Array();//总权
+mf={wop:[],wov:[],woi:0};
+tp={};
+for(tp.bfx of document.querySelectorAll("span[data-keynum]")){tp.bfx.addEventListener("click",function(){keys[this.getAttribute("data-keynum")]=1-keys[this.getAttribute("data-keynum")];stay.witheventtest()})};
+function newopenf(newopenfV){if(keys[67]){keys[67]=0;stay.witheventtest();mf.woi++;mf.wop[mf.woi]=window.open("","","width:100%");mf.wop[mf.woi].document.write("<body>"+newopenfV.parentNode.innerHTML+"</body>");stay.setstyle(mf.wop[mf.woi].document.body,document.body.style);mf.wop[mf.woi].document.write("<"+"script>"+document.querySelector("script").innerHTML+"</"+"script>");mf.wop[mf.woi].document.querySelector("head").innerHTML=document.querySelector("head").innerHTML;}};
+var temp={};
+var stay={
+ft:{},
+htmlcomp:function(){return arguments[0].replace(/&/g,"&amp;").replace(/"/g,"&quot;")},
+outputeach:function(){return "<span class=\"justtline\" data-keyans=\""+stay.htmlcomp(arguments[0][arguments[1]])+"\">"+"_".repeat(15)+"</span>"},
+setstyle:function(){for(temp.staystyx in arguments[1]){arguments[0].style[temp.staystyx]=arguments[1][temp.staystyx]}},setstylewith:function(){arguments[0].innerHTML=arguments[1];this.setstyle(arguments[0],arguments[2])},
+witheventtest:function(){if(keys[67]){cyid_rightshow.style.cursor="pointer";ot.style.cursor="pointer"}else{cyid_rightshow.style.cursor="auto";ot.style.cursor="auto"};if(keys[76]){this.setstyle(document.body,{backgroundColor:"white",color:"black"});for(tp.x of document.querySelectorAll("*[data-changecolor]")){tp.x.style.color=tp.x.getAttribute("data-darkcolor")}}else{this.setstyle(document.body,{backgroundColor:"black",color:"white"});for(tp.x of document.querySelectorAll("*[data-changecolor]")){tp.x.style.color=tp.x.getAttribute("data-lightcolor")}};for(tp.x of document.querySelectorAll(".justtline")){if(keys[83]){tp.x.innerHTML=tp.x.getAttribute("data-keyans")}else{tp.x.innerHTML="_".repeat(15)}};for(tp.x of document.querySelectorAll(".key")){if(keys[tp.x.getAttribute("data-keynum")]){tp.x.style.backgroundColor="yellow";tp.x.style.color="black"}else{tp.x.style.backgroundColor="inherit";tp.x.style.color="inherit"}}},
+rep:function(staydotrepv){return staydotrepv.replace(/=dh/g,"，").replace(/=eq/g,"=")},
+rep2:function(staydotrepv){return staydotrepv.replace(/\[\|[^\[\]\|]+\]/g,function(staydotrepi){return "<div style=\"transform:scale(0.5,1);display:inline-block;\">"+staydotrepi.replace(/[\[\|\]]/g,"")+"</div>"})},
+},tp={};
+textall.forEach(function(ct){stay.ft[ct[1]]=ct[0]});
+console.log(stay.ft);
+for(x in textall){
+textall[x][0]=textall[x][0].split(/[，；。？！]/g);
+console.log("%c"+textall[x][1]+"%c BY "+textall[x][2]+"%c("+textall[x][0].length+" sentences)","font-weight:bold;color:red","","color:green")
+for(xinx in textall[x][0]){textall[x][0][xinx]=stay.rep(textall[x][0][xinx])};
+weigh[x]=textall[x][0].length-2;if(x>0){weighsum[x]=weighsum[x-1]+weigh[x]}else{weighsum[x]=weigh[0]}};
+function arrayrandom(){with(Math){
+random();random();random();random();random();
+var arrayrandomrandom=random();
+var arrayrandomall=floor(arrayrandomrandom*weighsum[weighsum.length-1]);
+for(x in weighsum){if(x==weighsum.length-1){return x}else if(weighsum[x]>arrayrandomall){return x}};
+}};
+function naturalrandom(naturalrandomto){
+with(Math){random();random();random();var naturalrandomthis=random();if(naturalrandomthis==1){return naturalrandom(naturalrandomto)}else{return floor(naturalrandomthis*(naturalrandomto+1))}}
+};
+function get(id){return document.getElementById(id)};
+function showrighton(showrightn){
+if(get("rs")){tp.grs=rs}else if(window.opener){tp.grs=window.opener.get("rs")};
+tp.grs.innerHTML=stay.rep2(stay.rep(stay.ft[textall[showrightn][1]]));
+};
+function go(thisxuhao){
+var thistextnum=arrayrandom();
+var text=textall[thistextnum][0];
+var selmax=text.length-3;
+var thisnum=naturalrandom(selmax);
+var thistext=[text[thisnum],text[thisnum+1],text[thisnum+2]];
+var remain=naturalrandom(2);
+var output=[stay.outputeach(thistext,0),stay.outputeach(thistext,1),stay.outputeach(thistext,2)];
+output[remain]=thistext[remain];
+output=stay.rep2(output.toString().replace(/,/g,"<span style=\"color:yellow\">--</span>"));
+thistextct="";
+thistext.forEach(function(ct){thistextct+=ct+"\\n"});
+get("ot").insertRow(get("ot").rows.length).innerHTML="<td style=\"height:50px\"><span onclick=\"alert('"+thistextct+"')\" data-changecolor data-lightcolor=lightgreen data-darkcolor=green>查看答案&emsp;</span>"+thisxuhao+". "+output+"</td><td>（<span style=\"color:pink\" data-changecolor data-lightcolor=pink data-darkcolor=#C99>《<u onclick=showrighton("+thistextnum+")>"+textall[thistextnum][1]+"</u>》</span></td><td><span data-changecolor data-lightcolor=yellow data-darkcolor=#BB0>"+textall[thistextnum][2]+"</span>）</td>";
+};
+for(a=1;a<=100;a++){go(a)};
+console.log(textall);
+window.onload=function(){stay.witheventtest()}
+/*以下是监听函数部分*/
+keys=new Array(200).fill(0);
+document.addEventListener("keydown",function(){keys[arguments[0].keyCode]=1;stay.witheventtest()});
+document.addEventListener("keyup",function(){keys[arguments[0].keyCode]=0;stay.witheventtest()});
+document.addEventListener("click",function(){stay.witheventtest()});
+</script>
+</body>
+</html>
